@@ -1,0 +1,346 @@
+/* O atributo charset define a codificação como UTF-8, garantindo que os caracteres sejam exibidos corretamente. */
+@charset "UTF-8";
+
+/* Importa a fonte "Inter" do Google Fonts com variações de peso e estilo. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --cor0: #f7f7f7;
+    --cor1: #1a1a1a;
+    --cor2: #0466c8;
+
+    --background: #010b0c;
+    --background-input: #232828;
+    --background-gradient: #021f22;
+
+    --fonte: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Add */
+}
+
+body {
+    font-family: var(--fonte);
+    background-color: var(--background);
+    color: var(--cor0);
+}
+
+h1 {
+    font-size: 37px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 400px;
+    
+}
+
+p {
+    font-size: 16px;
+    
+}
+
+/* Introdução */
+section.introducao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 95vh;
+    background-image: url(img/Background\ Hero.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.codifique {
+    margin-top: 40px;
+    position: absolute;
+    margin-left: -430px;
+    top: 0 ;
+}
+
+.text {
+    margin-top: 100px;
+    width: 50%;
+    padding-right: 178px;
+    margin-left: -235px;
+   
+    
+}
+
+.text1 {
+    padding-right: 465px;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    width: 29%;
+    margin-left: -230px;
+   
+    
+}
+
+.introducao div {
+    max-height: 100px;
+    margin-right: 30%;
+}
+
+.logo {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+ul {
+    list-style: url(img/Ellipse\ Lista.svg);
+    padding-right: 50px;
+    margin-bottom: 15px;
+    
+
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+a, button {
+    float: none; /* Alterado de left para none */
+    margin-right: 0; /* Alterado de 720px para 0 */
+    background-color: var(--cor2);
+    border-radius: 5px;
+    border: 2px solid var(--cor2);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 44px;
+    color: var(--cor0);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block; /* Add */
+}
+
+/* Tecnologia */
+.tecnologia {
+    text-align: center;
+    height: 300px;
+    padding: 50px;
+}
+
+.tecnologia h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.tecnologia p {
+    font-size: 20px;
+}
+
+.tecnologia div {
+    width: 20%;
+    height: 100px;
+    display: inline-block;
+}
+
+/* Depoimentos */
+.depoimentos {
+    background-color: var(--cor0);
+    padding: 5% 10%;
+    color: var(--cor1);
+    text-align: center;
+}
+
+.depoimentos h2 {
+    padding-bottom: 40px;
+    font-size: 30px;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.testimonial img {
+    margin-top: 15px;
+}
+
+.Ana, .Carlos, .Mariana {
+    position: relative;
+    bottom: 50px;
+    left: 60px;
+}
+
+/* Inscrição */
+footer {
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: auto;
+    text-align: center;
+    background-color: var(--background-gradient);
+}
+
+footer h2 {
+    padding-bottom: 45px;
+    padding-top: 35px;
+    font-size: 30px;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+footer label {
+    width: 100%;
+    max-width: 415px;
+    margin-bottom: -10px;
+}
+
+footer input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid var(--cor2);
+    background-color: var(--background-input);
+    color: var(--cor0);
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+button {
+    margin-left: 720px; 
+    padding: 10px 160px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: -0,5px;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+/* Media Queries para Responsividade */
+
+/* Para telas pequenas ( Smartphones ) */
+@media (max-width: 600px) {
+    section.introducao {
+        height: auto;
+        padding: 20px;
+        background-size: cover;
+        background-position: center;
+    }
+
+.text, .text1 {
+    width: 100%;
+    padding-right: 0;
+}
+
+ul {
+    padding-right: 0;
+}
+
+a, button {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.codifique {
+    left: 50%; /* Alterado de 20px para 50% */
+    transform: translateX (-50%) ; /* Add */
+}
+
+}
+
+/* Para telas média (Tablets) */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    section.introducao {
+        height: auto;
+        padding: 30px;
+        background-size: 120%;
+        background-position: center;
+
+    }
+
+.text, .text1 {
+    width: 75%;
+    padding-right: 50px;
+}
+
+ul {
+    padding-right: 500px;
+}
+
+a, button {
+    margin-right: 0;
+    width: auto;
+}
+
+.codifique {
+    left: 50%; /* Alterado de 20px para 50% */
+    transform: translateX (-50%) ; /* Add */
+}
+
+.c-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.c-button button {
+    margin: 0 auto;
+}
+    
+}
+
+/* Para telas grandes 24 ( Desktops ) */
+
+@media (min-width: 1025px) {
+    section.introducao {
+        height: 95vh;
+        padding: 50px;
+        background-size: contain;
+        background-position: center;
+    }
+
+    h1, h2 {
+        position: relative;
+        left: -20px;
+    }
+
+    .text, .text1 {
+        width: 50%;
+        padding-right: 178px;
+    }
+
+    ul {
+        padding-right: 465px;
+    }
+
+    a, button {
+        margin-right: 720px;
+        width: auto;
+    }
+
+    .codifique {
+        left: 50%; /* Alterado de 20px para 50% */
+        transform: translateX (-50%) ; /* Add */
+    }
+}
+
+
