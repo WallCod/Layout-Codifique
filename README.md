@@ -4,7 +4,7 @@
 
 ![logo codifique](img/Background%20Hero.jpg)
 
-[Clique aqui](https://WallCod.github.io/Layout-Codifique/) para acessar o site.
+<a href="https://WallCod.github.io/Layout-Codifique/index.html" target="_blank">Clique aqui</a> para acessar o site.
 
 ### Sobre
 
