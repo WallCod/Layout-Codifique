@@ -4,152 +4,138 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CODIFIQUE</title>
+    <title>CODIFIQUE - Aprenda Programação</title>
+    <meta name="description" content="Torne-se o profissional mais requisitado pelo mercado de tecnologia. Aprenda programação e trabalhe de onde quiser.">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__content">
+                <img class="hero__logo" src="img/logo-Codifique.svg" alt="Logo Codifique" />
+                
+                <h1 class="hero__title">
+                    Torne-se o profissional mais <span>requisitado</span> pelo mercado de tecnologia<span>.</span>
+                </h1>
 
-        <section class="introducao">
-            <img class="codifique" src="img/Logo Codifique.svg" alt="logo" />
+                <h2 class="hero__subtitle">
+                    Aprenda programação e tenha liberdade para trabalhar onde quiser e para quem quiser.
+                </h2>
 
+                <ul class="hero__benefits">
+                    <li>Trabalhe remotamente</li>
+                    <li>Aplique para vagas no exterior</li>
+                    <li>Seja o profissional mais requisitado do mercado</li>
+                </ul>
 
-            <h1 class="text">
-                Torne-se o profissional mais <span style="color: #2c89e7;">requisitado</span> pelo mercado de
-                tecnologia<span style="color: #2c89e7;">.</span>
-            </h1>
-
-            <h2 class="text1">
-                Aprenda programação e tenha liberdade
-                para trabalhar onde quiser e
-                para quem quiser.
-            </h2>
-
-            <ul>
-                <li>Trabalhe remotamente</li>
-                <li>Aplique para vagas no exterior</li>
-                <li>Seja o profissional mais requisitado do mercado</li>
-            </ul>
-
-            <a href="#inscricao">Inscreva-se</a>
-
-        </section>
-
-        <section class="tecnologia">
-            <h2>O que você aprenderá durante o curso:</h2>
-
-            <div>
-                <img src="img/Logo HTML5.png" alt=" Logo HTML5" />
-                <p>HTML 5</p>
-            </div>
-
-            <div>
-                <img src="img/Logo CSS3.png" alt="Logo CSS3" />
-                <p>CSS3</p>
-            </div>
-
-            <div>
-                <img src="img/Logo JavaScript.png" alt="Logo JavaScript" />
-                <p>JavaScript</p>
-            </div>
-
-            <div>
-                <img src="img/Logo React.png" alt="Logo React" />
-                <p>React</p>
+                <a href="#inscricao" class="btn btn--primary">Inscreva-se</a>
             </div>
         </section>
 
-        <section class="depoimentos">
+        <!-- Technology Section -->
+        <section class="technologies">
+            <h2 class="section-title">O que você aprenderá durante o curso:</h2>
 
-            <h2>
-                <strong>
-                    <span style="color: #2c89e7;"> Depoimentos </span> dos Alunos
+            <div class="technologies__grid">
+                <div class="tech-card">
+                    <img src="img/logo-HTML5.png" alt="Logotipo HTML5" />
+                    <p>HTML 5</p>
+                </div>
+
+                <div class="tech-card">
+                    <img src="img/logo-CSS3.png" alt="Logotipo CSS3" />
+                    <p>CSS3</p>
+                </div>
+
+                <div class="tech-card">
+                    <img src="img/logo-JavaScript.png" alt="Logotipo JavaScript" />
+                    <p>JavaScript</p>
+                </div>
+
+                <div class="tech-card">
+                    <img src="img/logo-React.png" alt="Logotipo React" />
+                    <p>React</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2 class="section-title">
+                <span>Depoimentos</span> dos Alunos
             </h2>
-            </strong>
 
-            <div class="testimonial-container">
-                <div class="testimonial">
-                    <p>
-                        "O curso de programação superou todas as minhas expectativas! A
-                        didática dos professores e o material de apoio são excelentes.
-                        Consegui aprender e aplicar conceitos complexos de forma prática e
-                        rápida. Recomendo a todos que desejam se aprofundar na área de
-                        tecnologia."
+            <div class="testimonials__grid">
+                <!-- Testimonial 1 -->
+                <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                        "O curso de programação superou todas as minhas expectativas! A didática dos professores e o material de apoio são excelentes. Consegui aprender e aplicar conceitos complexos de forma prática e rápida. Recomendo a todos que desejam se aprofundar na área de tecnologia."
                     </p>
-
-                    <img src="img/Foto Aluno 1.png" alt="Foto da Ana">
-
-
-                    <div class="Ana">
-                        <p> <strong>Ana Silva</strong>
-                            <br> Analista de Sistemas
-                        </p>
+                    <div class="testimonial-card__author">
+                        <img src="img/foto-Aluno-1.png" alt="Foto da Ana Silva">
+                        <div class="author-info">
+                            <strong>Ana Silva</strong>
+                            <span>Analista de Sistemas</span>
+                        </div>
                     </div>
+                </article>
 
-                </div>
-
-                <div class="testimonial">
-                    <p>
-                        "Este curso mudou a
-                        minha carreira. As aulas são bem estruturadas e focadas nas
-                        necessidades do mercado. Desde que concluí o curso, me sinto muito
-                        mais confiante e preparado para enfrentar os desafios do dia a dia
-                        no desenvolvimento web."
+                <!-- Testimonial 2 -->
+                <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                        "Este curso mudou a minha carreira. As aulas são bem estruturadas e focadas nas necessidades do mercado. Desde que concluí o curso, me sinto muito mais confiante e preparado para enfrentar os desafios do dia a dia no desenvolvimento web."
                     </p>
-
-                    <img src="img/Foto Aluno 2.png" alt="Foto de Carlos">
-
-                    <div class="Carlos">
-                        <p> <strong>Carlos Souza </strong>
-                            <br> Desenvolvedor Web
-                        </p>
+                    <div class="testimonial-card__author">
+                        <img src="img/foto-Aluno-2.png" alt="Foto de Carlos Souza">
+                        <div class="author-info">
+                            <strong>Carlos Souza</strong>
+                            <span>Desenvolvedor Web</span>
+                        </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="testimonial">
-                    <p> "Fazer esse curso foi uma das melhores decisões que já tomei. A abordagem
-                        prática e os exemplos reais fizeram toda a diferença no meu
-                        aprendizado. Agora, me sinto preparada para qualquer desafio na área
-                        de engenharia de software.
+                <!-- Testimonial 3 -->
+                <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                        "Fazer esse curso foi uma das melhores decisões que já tomei. A abordagem prática e os exemplos reais fizeram toda a diferença no meu aprendizado. Agora, me sinto preparada para qualquer desafio na área de engenharia de software."
                     </p>
-                    <br>
-
-                    <img src="img/Foto Aluno 3.png" alt="Foto Mariana">
-
-                    <div class="Mariana">
-                        <p> <strong>Mariana Oliveira </strong>
-                            <br> Engenheira de Software
-                        </p>
+                    <div class="testimonial-card__author">
+                        <img src="img/foto-Aluno-3.png" alt="Foto Mariana Oliveira">
+                        <div class="author-info">
+                            <strong>Mariana Oliveira</strong>
+                            <span>Engenheira de Software</span>
+                        </div>
                     </div>
-                </div>
-
-
+                </article>
             </div>
         </section>
     </main>
 
-    <footer id="inscricao">
+    <footer id="inscricao" class="site-footer">
+        <h2 class="section-title"><span>Inscreva-se</span> agora</h2>
 
-        <strong>
-        <h2><span style="color: #2c89e7;"> Inscreva-se</span> agora </h2>
-        </strong>
-
-        <form action="">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Insira seu nome completo">
-
-            <label for="email">Email</label>
-            <input type="email" id="Email" placeholder="Insira seu email">
-
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-            <div class="c-button">
-            <button type="submit">Inscreva-se</button>
+        <form action="" class="subscription-form">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Insira seu nome completo" required>
             </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Insira seu email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+            </div>
+
+            <button type="submit" class="btn btn--submit">Inscreva-se</button>
         </form>
     </footer>
-
 </body>
 
 </html>

@@ -1,346 +1,315 @@
-/* O atributo charset define a codificação como UTF-8, garantindo que os caracteres sejam exibidos corretamente. */
-@charset "UTF-8";
-
-/* Importa a fonte "Inter" do Google Fonts com variações de peso e estilo. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+/* Variáveis e Configurações Globais */
 :root {
-    --cor0: #f7f7f7;
-    --cor1: #1a1a1a;
-    --cor2: #0466c8;
-
-    --background: #010b0c;
-    --background-input: #232828;
-    --background-gradient: #021f22;
-
-    --fonte: 'Inter', sans-serif;
+    --color-text-light: #f7f7f7;
+    --color-text-dark: #1a1a1a;
+    --color-primary: #0466c8;
+    --color-accent: #2c89e7;
+    
+    --bg-body: #010b0c;
+    --bg-input: #232828;
+    --bg-gradient: linear-gradient(to bottom, #021f22, #010b0c); /* Ajustado para simular o visual original */
+    
+    --font-primary: 'Inter', sans-serif;
+    
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
 }
 
-* {
+/* Reset Moderno */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Add */
+    box-sizing: border-box;
 }
 
 body {
-    font-family: var(--fonte);
-    background-color: var(--background);
-    color: var(--cor0);
+    font-family: var(--font-primary);
+    background-color: var(--bg-body);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
 }
 
-h1 {
-    font-size: 37px;
-    font-weight: bold;
-    margin-bottom: 24px;
-}
-
-h2 {
-    font-size: 20px;
-    font-weight: 400px;
-    
-}
-
-p {
-    font-size: 16px;
-    
-}
-
-/* Introdução */
-section.introducao {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    width: 100%;
-    height: 95vh;
-    background-image: url(img/Background\ Hero.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.codifique {
-    margin-top: 40px;
-    position: absolute;
-    margin-left: -430px;
-    top: 0 ;
-}
-
-.text {
-    margin-top: 100px;
-    width: 50%;
-    padding-right: 178px;
-    margin-left: -235px;
-   
-    
-}
-
-.text1 {
-    padding-right: 465px;
-    margin-bottom: 20px;
-    margin-top: 6px;
-    width: 29%;
-    margin-left: -230px;
-   
-    
-}
-
-.introducao div {
-    max-height: 100px;
-    margin-right: 30%;
-}
-
-.logo {
-    margin-top: 40px;
-    margin-bottom: 80px;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 ul {
-    list-style: url(img/Ellipse\ Lista.svg);
-    padding-right: 50px;
-    margin-bottom: 15px;
-    
-
+    list-style: none; /* Vamos usar o ícone no li::before ou background */
 }
 
-li {
-    margin-bottom: 12px;
-}
-
-a, button {
-    float: none; /* Alterado de left para none */
-    margin-right: 0; /* Alterado de 720px para 0 */
-    background-color: var(--cor2);
-    border-radius: 5px;
-    border: 2px solid var(--cor2);
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 44px;
-    color: var(--cor0);
+a {
     text-decoration: none;
+    color: inherit;
+}
+
+/* Utilitários */
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
     font-weight: bold;
-    font-size: 20px;
-    display: inline-block; /* Add */
 }
 
-/* Tecnologia */
-.tecnologia {
-    text-align: center;
-    height: 300px;
-    padding: 50px;
+.section-title span {
+    color: var(--color-accent);
 }
 
-.tecnologia h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-.tecnologia p {
-    font-size: 20px;
-}
-
-.tecnologia div {
-    width: 20%;
-    height: 100px;
-    display: inline-block;
-}
-
-/* Depoimentos */
-.depoimentos {
-    background-color: var(--cor0);
-    padding: 5% 10%;
-    color: var(--cor1);
-    text-align: center;
-}
-
-.depoimentos h2 {
-    padding-bottom: 40px;
-    font-size: 30px;
-}
-
-.testimonial-container {
+/* Hero Section */
+.hero {
+    min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: flex-start; /* Alinha à esquerda conforme design original, mas responsivo */
+    padding: var(--spacing-xl) 5%; /* Padding lateral ao invés de margin fixo */
+    background-image: url('img/background-hero.jpg');
+    background-size: cover; /* Cover é melhor que contain para preencher telas */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.testimonial {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
+.hero__content {
+    max-width: 600px; /* Limita a largura do conteúdo para não esticar demais */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 
-.testimonial img {
-    margin-top: 15px;
+.hero__logo {
+    width: 200px; /* Tamanho razoável para o logo */
+    margin-bottom: var(--spacing-md);
 }
 
-.Ana, .Carlos, .Mariana {
-    position: relative;
-    bottom: 50px;
-    left: 60px;
+.hero__title {
+    font-size: 2.5rem;
+    line-height: 1.2;
 }
 
-/* Inscrição */
-footer {
-    padding: 40px 20px;
-    border-radius: 8px;
-    margin: auto;
+.hero__title span {
+    color: var(--color-accent);
+}
+
+.hero__subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 80%;
+}
+
+.hero__benefits li {
+    background-image: url('img/ellipse-Lista.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 25px; /* Espaço para o ícone */
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    color: var(--color-text-light);
+    font-weight: bold;
+    font-size: 1.1rem;
     text-align: center;
-    background-color: var(--background-gradient);
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+    width: fit-content;
 }
 
-footer h2 {
-    padding-bottom: 45px;
-    padding-top: 35px;
-    font-size: 30px;
+.btn:hover {
+    background-color: #0353a3;
+    border-color: #0353a3;
+    transform: translateY(-2px);
 }
 
-footer form {
+/* Technology Section */
+.technologies {
+    padding: var(--spacing-xl) 20px;
+    text-align: center;
+    background-color: var(--bg-body);
+}
+
+.technologies__grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: var(--spacing-xl);
+}
+
+.tech-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    text-align: left;
+    gap: var(--spacing-sm);
+    min-width: 120px;
 }
 
-footer label {
-    width: 100%;
-    max-width: 415px;
-    margin-bottom: -10px;
+.tech-card img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
 }
 
-footer input {
-    padding: 10px;
-    border-radius: 4px;
-    border: 2px solid var(--cor2);
-    background-color: var(--background-input);
-    color: var(--cor0);
-    font-size: 16px;
-    width: 100%;
-    max-width: 400px;
+.tech-card p {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
-button {
-    margin-left: 720px; 
-    padding: 10px 160px;
-    cursor: pointer;
-    font-size: 14px;
-    letter-spacing: -0,5px;
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: middle;
-    
-}
-
-/* Media Queries para Responsividade */
-
-/* Para telas pequenas ( Smartphones ) */
-@media (max-width: 600px) {
-    section.introducao {
-        height: auto;
-        padding: 20px;
-        background-size: cover;
-        background-position: center;
-    }
-
-.text, .text1 {
-    width: 100%;
-    padding-right: 0;
-}
-
-ul {
-    padding-right: 0;
-}
-
-a, button {
-    margin-right: 0;
-    width: 100%;
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--color-text-light); /* Cor clara original */
+    color: var(--color-text-dark);
+    padding: var(--spacing-xl) 5%;
     text-align: center;
 }
 
-.codifique {
-    left: 50%; /* Alterado de 20px para 50% */
-    transform: translateX (-50%) ; /* Add */
+.testimonials .section-title {
+    color: var(--color-text-dark);
 }
 
+.testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo automático */
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
-/* Para telas média (Tablets) */
-
-@media (min-width: 601px) and (max-width: 1024px) {
-    section.introducao {
-        height: auto;
-        padding: 30px;
-        background-size: 120%;
-        background-position: center;
-
-    }
-
-.text, .text1 {
-    width: 75%;
-    padding-right: 50px;
-}
-
-ul {
-    padding-right: 500px;
-}
-
-a, button {
-    margin-right: 0;
-    width: auto;
-}
-
-.codifique {
-    left: 50%; /* Alterado de 20px para 50% */
-    transform: translateX (-50%) ; /* Add */
-}
-
-.c-button {
+.testimonial-card {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    padding: var(--spacing-md);
+    background-color: #fff; /* Fundo branco para os cards para destacar do fundo cinza claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.testimonial-card__text {
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.testimonial-card__author {
+    display: flex;
     align-items: center;
-    padding: 20px;
+    gap: var(--spacing-md);
 }
 
-.c-button button {
+.testimonial-card__author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+/* Footer / Subscription */
+.site-footer {
+    background-color: #021f22; /* Cor sólida aproximada ou gradiente */
+    background: var(--bg-gradient);
+    padding: var(--spacing-xl) 20px;
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.subscription-form {
+    max-width: 500px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: left;
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 12px;
+    background-color: var(--bg-input);
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    color: var(--color-text-light);
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.btn--submit {
+    align-self: center; /* Centraliza o botão no form flex */
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+/* Responsividade Avançada */
+@media (min-width: 1024px) {
+    /* Ajustes específicos para Desktop */
+    .hero {
+        padding-left: 10%; /* Mais espaço à esquerda em telas grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para Tablets e Mobile */
+    .hero {
+        background-position: center; /* Centraliza vertical e horizontalmente */
+        justify-content: center; /* Centraliza conteúdo */
+        text-align: center;
+    }
+
+    .hero__content {
+        align-items: center;
+    }
+
+    .hero__benefits {
+        display: inline-block;
+        text-align: left; /* Mantém a lista alinhada à esquerda mesmo centralizada */
+    }
     
-}
-
-/* Para telas grandes 24 ( Desktops ) */
-
-@media (min-width: 1025px) {
-    section.introducao {
-        height: 95vh;
-        padding: 50px;
-        background-size: contain;
-        background-position: center;
+    .hero__logo {
+        margin: 0 auto var(--spacing-md);
     }
 
-    h1, h2 {
-        position: relative;
-        left: -20px;
-    }
-
-    .text, .text1 {
-        width: 50%;
-        padding-right: 178px;
-    }
-
-    ul {
-        padding-right: 465px;
-    }
-
-    a, button {
-        margin-right: 720px;
-        width: auto;
-    }
-
-    .codifique {
-        left: 50%; /* Alterado de 20px para 50% */
-        transform: translateX (-50%) ; /* Add */
+    .section-title {
+        font-size: 1.75rem;
     }
 }
 
+@media (max-width: 480px) {
+    /* Mobile Pequeno */
+    .hero__title {
+        font-size: 2rem;
+    }
 
+    .testimonials__grid {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+    
+    .tech-card {
+        min-width: 45%; /* 2 por linha em mobile */
+    }
+}
