@@ -2,7 +2,7 @@
 
 ### Atividade de Replicação do Layout Codifique pela Faculdade UNIFATECIE. 📚
 
-![logo codifique](img/Background%20Hero.jpg)
+![logo codifique](img/background-hero.jpg) 
 
 <a href="https://WallCod.github.io/Layout-Codifique/index.html" target="_blank">Clique aqui</a> para acessar o site.
 
